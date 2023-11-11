@@ -77,6 +77,10 @@ void GUI::handleInput(sf::Event& event) {
 			// CHECK IF THE MOUSE IS ON A BUTTON OF THE DOCK (outside the map)
 			else if (handleMouseClick(event.mouseButton.x, event.mouseButton.y, create_route_sprite)) {
 			cout << "CREATE ROUTE" << endl;
+
+
+			map_overlay.create_route();
+			//DEBUG:
 			}
 			else if (handleMouseClick(event.mouseButton.x, event.mouseButton.y, delete_route_sprite)) {
 				cout << "DELETE ROUTE" << endl;
@@ -93,16 +97,23 @@ void GUI::handleInput(sf::Event& event) {
 			else if (handleMouseClick(event.mouseButton.x, event.mouseButton.y, map_sprite))
 			{
 				if (event.mouseButton.x > 0 && event.mouseButton.x < 1280 && event.mouseButton.y > 0 && event.mouseButton.y < 600) {
-					if (map_overlay.delete_mode) {
-						cout << "DELETE NODE" << endl;
-						// handle node delete
+					if (map_overlay.selected_route == -1) {
+						cout << "NO ROUTE SELECTED" << endl;
+						// handle no route selected
 					}
-					else {
-						cout << "ADD NODE" << endl;
-						map_overlay.add_node(event.mouseButton.x, event.mouseButton.y);
+					else{
+						if (map_overlay.delete_mode) {
+							cout << "DELETE NODE" << endl;
+							// handle node delete
+						}
+						else {
+							cout << "ADD NODE" << endl;
+							map_overlay.add_node(event.mouseButton.x, event.mouseButton.y);
 
-						// handle node add
+							// handle node add
+						}
 					}
+
 					// hanle node add to route then connect to previus or non-existed node and draw line
 
 					// handle node add or remove depending on the selected route (could be multiple routes)
