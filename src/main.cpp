@@ -1,11 +1,18 @@
 #include <iostream>
-#include "../include/GUI.h"
+using namespace std;
+
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
+#include "../include/GUI.h"
+
+// THE GUI BASICALLY HANDLES THE OVERALL GAME UI (BUTTONS, MAP, ETC)
+// IT ALSO HANDLES THE USER INPUT ON TOP OF THE UI AS A LAYER WITH THE MEHTOD handleInput()
+// THE GUI IS A COMPOSITION OF THE MAP OVERLAY AND THE UI ITSELF
+
 int main() {
 
-    RenderWindow window(VideoMode(1280, 720), "SFML works!");
+    RenderWindow window(VideoMode(1280, 720), "AeroMap v0.3 ALPHA");
     window.setFramerateLimit(60);
 
     GUI gui(window);

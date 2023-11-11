@@ -6,34 +6,29 @@ using namespace sf;
 #include <iostream>
 using namespace std;
 
+#include "MapOverlay.h"
+
 
 
 class GUI {
 
-private:
-
-
-
-
 public:
 
+	// MAP BUTTON-SPRITE
 	Texture map_texture;
 	Sprite map_sprite;
 
-	Texture red_texture;
-	Sprite red_sprite;
+	// MAP OVERLAY
+	MapOverlay map_overlay;
 
-	Texture blue_texture;
-	Sprite blue_sprite;
+	// PALLETE BUTTONS
+	Texture red_texture; Texture blue_texture; Texture green_texture; Texture yellow_texture; Texture orange_texture;
+	Sprite red_sprite; Sprite blue_sprite; Sprite green_sprite; Sprite yellow_sprite; Sprite orange_sprite;
 
-	Texture green_texture;
-	Sprite green_sprite;
+	// DOCK BUTTONS
+	Texture create_route_texture; Texture delete_route_texture; Texture delete_mode_off_texture; Texture delete_mode_on_texture;  Texture save_texture; Texture load_texture;
+	Sprite create_route_sprite; Sprite delete_route_sprite; Sprite delete_mode_off_sprite; Sprite delete_mode_on_sprite; Sprite save_sprite; Sprite load_sprite;
 
-	Texture yellow_texture;
-	Sprite yellow_sprite;
-
-	Texture orange_texture;
-	Sprite orange_sprite;
 
 	GUI();
 

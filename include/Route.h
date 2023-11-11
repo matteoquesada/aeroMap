@@ -1,11 +1,11 @@
 #pragma once
-
-#include "Node.h"
-
+#include <SFML/Graphics.hpp>
+using namespace sf;
 #include "Node.h"
 
 class Route {
 private:
+
     Node* head;
     Node* tail;
 
@@ -16,4 +16,6 @@ public:
     Node* getStartNode();
     void setEndNode(Node* tail);
     Node* getEndNode();
+    void addNode(Node* node);
+    void draw(RenderWindow& window);
 };
