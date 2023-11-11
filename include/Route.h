@@ -1,26 +1,19 @@
 #pragma once
+
+#include "Node.h"
+
 #include "Node.h"
 
 class Route {
-
-	Node* head;
-	Node* tail;
+private:
+    Node* head;
+    Node* tail;
 
 public:
-
-	Route();
-
-	void addNode(Node* node);
-
-	void removeNode(Node* node);
-
-	
-
-
-
-
-
-
-
-
+    Route();
+    Route(Node* head, Node* tail);
+    void setStartNode(Node* head);
+    Node* getStartNode();
+    void setEndNode(Node* tail);
+    Node* getEndNode();
 };

@@ -1,30 +1,24 @@
 #include "../include/Route.h"
 
-Route::Route() : head(nullptr), tail(nullptr) {}
 
-// TODO: implement a way to fill and create the new node and its data
-void Route::addNode(Node* node) { // the received node still needs to have its data created somewhere
-	if (head == nullptr) {
-		head = node;
-		tail = node;
-	} 
-	else {
-		tail->setNext(node);
-		node->setPrev(tail);
-	}
+Route::Route() : head(nullptr), tail(nullptr) {
 }
 
-void Route::removeNode(Node* node) { // the recieved node alrady has its data created somewhere
-	if (head == node) {
-		head = node->getNext();
-	}
-	else if(tail == node){
-		tail->getPrev()->setNext(nullptr);
-		tail = tail->getPrev();
-	}
-	else {
-		node->getPrev()->setNext(node->getNext());
-		node->getNext()->setPrev(node->getPrev());
-	}
-	delete node;
+Route::Route(Node* head, Node* tail) : head(head), tail(tail) {
+}
+
+void Route::setStartNode(Node* head) {
+    this->head = head;
+}
+
+Node* Route::getStartNode() {
+    return head;
+}
+
+void Route::setEndNode(Node* tail) {
+    this->tail = tail;
+}
+
+Node* Route::getEndNode() {
+    return tail;
 }

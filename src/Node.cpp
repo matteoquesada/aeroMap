@@ -1,17 +1,27 @@
 #include "../include/Node.h"
 
-Node::Node(): x(0), y(0), next(nullptr), prev(nullptr) {}
+Node::Node(int x, int y) : x(x), y(y), next(nullptr), prev(nullptr) {}
 
-Node::Node(int x, int y): x(x), y(y), next(nullptr), prev(nullptr) {}
+int Node::getX(){
+    return x;
+}
 
-void Node::setNext(Node* next) { this->next = next; }
+int Node::getY(){
+    return y;
+}
 
-void Node::setPrev(Node* prev) { this->prev = prev; }
+Node* Node::getNext(){
+    return next;
+}
 
-Node* Node::getNext() { return next; }
+Node* Node::getPrev(){
+    return prev;
+}
 
-Node* Node::getPrev() { return prev; }
+void Node::setNext(Node* nextNode) {
+    next = nextNode;
+}
 
-int Node::getX() { return x; }
-
-int Node::getY() { return y; }
+void Node::setPrev(Node* prevNode) {
+    prev = prevNode;
+}

@@ -70,6 +70,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>.\SFML\include;$(IncludePath)</IncludePath>
+    <LibraryPath>.\SFML\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -108,6 +112,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -127,13 +132,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Button.cpp" />
+    <ClCompile Include="src\EventHandler.cpp" />
+    <ClCompile Include="src\GUI.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Map.cpp" />
+    <ClCompile Include="src\MapOverlay.cpp" />
     <ClCompile Include="src\Node.cpp" />
     <ClCompile Include="src\Route.cpp" />
+    <ClCompile Include="src\Routes.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Button.h" />
+    <ClInclude Include="include\EventHandler.h" />
+    <ClInclude Include="include\GUI.h" />
+    <ClInclude Include="include\Map.h" />
+    <ClInclude Include="include\MapOverlay.h" />
     <ClInclude Include="include\Node.h" />
     <ClInclude Include="include\Route.h" />
+    <ClInclude Include="include\Routes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,29 +1,18 @@
 #pragma once
 
 class Node {
-
-	int x;
-	int y;
-
-	Node* next;
-	Node* prev;
+private:
+    int x;
+    int y;
+    Node* next;
+    Node* prev;
 
 public:
-
-	Node();
-
-	Node(int x, int y);
-
-	void setNext(Node* next);
-
-	void setPrev(Node* prev);
-
-	Node* getNext();
-
-	Node* getPrev();
-
-	int getX();
-
-	int getY();
-
+    Node(int x, int y);
+    int getX();
+    int getY();
+    Node* getNext();
+    Node* getPrev();
+    void setNext(Node* nextNode);
+    void setPrev(Node* prevNode);
 };
