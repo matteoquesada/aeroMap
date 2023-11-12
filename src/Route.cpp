@@ -36,6 +36,22 @@ void Route::addNode(Node* node) {
 	}
 }
 
+// DELETES A NODE FROM THE ROUTE
+void Route::deleteNode(Node* node) {
+	if (node == head) {
+		head = node->getNext();
+		head->setPrev(nullptr);
+	}
+	else if (node == tail) {
+		tail = node->getPrev();
+		tail->setNext(nullptr);
+	}
+	else {
+		node->getPrev()->setNext(node->getNext());
+		node->getNext()->setPrev(node->getPrev());
+	}
+}
+
 void Route::draw(RenderWindow& window) {
 	Node* current = head;
 	while (current != nullptr) {

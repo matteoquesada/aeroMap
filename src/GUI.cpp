@@ -42,7 +42,7 @@ void GUI::draw(RenderWindow& window) {
 	// MOVES OUT OF THE SCREEN WHEN NOT ACTIVE - MAKING IT INVISIBLE AND UNCLICKABLE
 	if (map_overlay.delete_mode) {
 		delete_mode_on_sprite.setPosition(685, 615);
-		delete_mode_off_sprite.setPosition(-1000, -1000); 
+		delete_mode_off_sprite.setPosition(-1000, -1000);
 		window.draw(delete_mode_on_sprite);
 	}
 	else {
@@ -80,7 +80,6 @@ void GUI::handleInput(sf::Event& event) {
 
 
 			map_overlay.create_route();
-			//DEBUG:
 			}
 			else if (handleMouseClick(event.mouseButton.x, event.mouseButton.y, delete_route_sprite)) {
 				cout << "DELETE ROUTE" << endl;
@@ -94,34 +93,22 @@ void GUI::handleInput(sf::Event& event) {
 				map_overlay.change_delete_mode();
 			}
 
-			else if (handleMouseClick(event.mouseButton.x, event.mouseButton.y, map_sprite))
-			{
+			else if (handleMouseClick(event.mouseButton.x, event.mouseButton.y, map_sprite)) {
 				if (event.mouseButton.x > 0 && event.mouseButton.x < 1280 && event.mouseButton.y > 0 && event.mouseButton.y < 600) {
 					if (map_overlay.selected_route == -1) {
 						cout << "NO ROUTE SELECTED" << endl;
 						// handle no route selected
 					}
-					else{
+					else {
 						if (map_overlay.delete_mode) {
 							cout << "DELETE NODE" << endl;
-							// handle node delete
+							map_overlay.delete_node(event.mouseButton.x, event.mouseButton.y);
 						}
 						else {
 							cout << "ADD NODE" << endl;
 							map_overlay.add_node(event.mouseButton.x, event.mouseButton.y);
-
-							// handle node add
 						}
 					}
-
-					// hanle node add to route then connect to previus or non-existed node and draw line
-
-					// handle node add or remove depending on the selected route (could be multiple routes)
-					// if the remove node selection is true then remove the node and reconnect the route
-					// if the remove node selection is false then add the node and connect the route
-				}
-				else {
-					cout << "OUTSIDE MAP - should handle different button" << endl;
 				}
 			}
 		}

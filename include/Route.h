@@ -18,4 +18,5 @@ public:
     Node* getEndNode();
     void addNode(Node* node);
     void draw(RenderWindow& window);
+    void deleteNode(Node* node);
 };

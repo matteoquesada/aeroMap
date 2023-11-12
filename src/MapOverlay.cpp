@@ -1,4 +1,5 @@
 #include "../include/MapOverlay.h"
+#include <iostream>
 
 
 MapOverlay::MapOverlay() {
@@ -30,20 +31,23 @@ void MapOverlay::change_delete_mode() {
 	delete_mode = !delete_mode;
 }
 
+// DELETES A NODE IF THE CLICK IS IN A RANGE OF 5 PIXELS
 void MapOverlay::delete_node(int x, int y) {
-	Node* current = routes[selected_route].getStartNode();
-	while (current != nullptr) {
-		if (current->getX() == x && current->getY() == y) {
-			if (current->getPrev() != nullptr) {
-				current->getPrev()->setNext(current->getNext());
-			}
-			if (current->getNext() != nullptr) {
-				current->getNext()->setPrev(current->getPrev());
-			}
-			delete current;
+    Node* current = routes[selected_route].getStartNode();
+
+    while (current != nullptr) {
+
+		if (current->getX() >= x - 10 && current->getX() <= x + 10 && current->getY() >= y - 10 && current->getY() <= y + 10) {
+			routes[selected_route].deleteNode(current);
+
+			//delete current;
+
 			break;
 		}
+
 		current = current->getNext();
 	}
+
 }
+
 
