@@ -25,7 +25,7 @@ int main() {
             }
             else if (event.type == Event::MouseButtonPressed) {
                 if (event.mouseButton.button == Mouse::Left) {
-                    gui.handleInput(event);
+                    gui.handle_input(event);
                 }
             }
         }

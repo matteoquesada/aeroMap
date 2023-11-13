@@ -1,27 +1,34 @@
 #include "../include/Node.h"
 
+// CONSTRUCTOR
 Node::Node(int x, int y) : x(x), y(y), next(nullptr), prev(nullptr) {}
 
-int Node::getX(){
+// GETTERS AND SETTERS
+int Node::get_x(){
     return x;
 }
 
-int Node::getY(){
+// GETTERS AND SETTERS
+int Node::get_y(){
     return y;
 }
 
-Node* Node::getNext(){
+// GETTERS AND SETTERS
+Node* Node::get_next(){
     return next;
 }
 
-Node* Node::getPrev(){
+// GETTERS AND SETTERS
+Node* Node::get_prev(){
     return prev;
 }
 
-void Node::setNext(Node* nextNode) {
+// GETTERS AND SETTERS
+void Node::set_next(Node* nextNode) {
     next = nextNode;
 }
 
-void Node::setPrev(Node* prevNode) {
+// GETTERS AND SETTERS
+void Node::set_prev(Node* prevNode) {
     prev = prevNode;
 }

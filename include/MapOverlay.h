@@ -1,20 +1,23 @@
 #pragma once
 
-#include "Routes.h"
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
+#include "Route.h"
+
 class MapOverlay {
+
+private:
 
 	std::vector<Route> routes;
 	
-
 public:
 
 	int selected_route;
 
 	bool delete_mode;
 
+	// CONSTRUCTOR
 	MapOverlay();
 
 	// ADDS A NODE TO AN EXISTENT ROUTE
@@ -34,6 +37,9 @@ public:
 
 	// DELETE NODE
 	void delete_node(int x, int y);
+
+	// CHANGE ROUTE COLOR
+	void change_route_color(Color color);
 
 
 

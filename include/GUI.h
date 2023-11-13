@@ -34,14 +34,14 @@ public:
 
 	GUI(RenderWindow& window);
 
-	void initializeTextureAndSprite(Texture& texture, Sprite& sprite, string dir, int x, int y, float x_scale, float y_scale);
+	void initialize_texture_and_sprite(Texture& texture, Sprite& sprite, string dir, int x, int y, float x_scale, float y_scale);
 	
 	void draw(RenderWindow& window);
 
-	void handleInput(sf::Event& event);
+	void handle_input(Event& event);
 
-	bool handleMouseClick(int x, int y, const sf::Sprite& button);
+	bool handle_mouse_click(int x, int y, const Sprite& button);
 
-	bool isInsideButton(int x, int y, const sf::Sprite& button);
+	bool is_inside_button(int x, int y, const Sprite& button);
 
 };
