@@ -53,6 +53,10 @@ void GUI::draw(RenderWindow& window) {
 }
 
 // WORKS AS A HANDLE LAYER FOR USER INPUT ON TOP OF THE UI	
+// HANDLES THE ENTIRE CLICK DETECTION AND CALLS THE CORRESPONDING METHODS FROM THE MAP OVERLAY
+// TO ADD NODES, CREATE ROUTES, DELETE NODES, ETC
+//
+// EACH BUTTON HAS ITS OWN LOGIC GATE
 void GUI::handle_input(Event& event) {
 	if (event.type == Event::MouseButtonPressed) {
 		if (event.mouseButton.button == Mouse::Left) {
@@ -100,7 +104,6 @@ void GUI::handle_input(Event& event) {
 				if (event.mouseButton.x > 0 && event.mouseButton.x < 1280 && event.mouseButton.y > 0 && event.mouseButton.y < 600) {
 					if (map_overlay.selected_route == -1) {
 						cout << "NO ROUTE SELECTED" << endl;
-						// handle no route selected
 					}
 					else {
 						if (map_overlay.delete_mode) {
