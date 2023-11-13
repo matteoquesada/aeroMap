@@ -1,5 +1,6 @@
 #include "../include/GUI.h"
 
+// CONSTRUCTOR
 GUI::GUI() {
 }
 
