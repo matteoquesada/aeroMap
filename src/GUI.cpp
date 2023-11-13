@@ -130,6 +130,7 @@ bool GUI::handle_mouse_click(int x, int y, const Sprite& button) {
 	return false; 
 }
 
+// CHECKS IF THE MOUSE IS INSIDE A BUTTON
 bool GUI::is_inside_button(int x, int y, const Sprite& button) {
 	FloatRect bounds = button.getGlobalBounds();
 	return bounds.contains(static_cast<float>(x), static_cast<float>(y));
