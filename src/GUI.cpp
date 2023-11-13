@@ -77,8 +77,6 @@ void GUI::handleInput(sf::Event& event) {
 			// CHECK IF THE MOUSE IS ON A BUTTON OF THE DOCK (outside the map)
 			else if (handleMouseClick(event.mouseButton.x, event.mouseButton.y, create_route_sprite)) {
 			cout << "CREATE ROUTE" << endl;
-
-
 			map_overlay.create_route();
 			}
 			else if (handleMouseClick(event.mouseButton.x, event.mouseButton.y, delete_route_sprite)) {

@@ -40,7 +40,7 @@ void MapOverlay::delete_node(int x, int y) {
 		if (current->getX() >= x - 10 && current->getX() <= x + 10 && current->getY() >= y - 10 && current->getY() <= y + 10) {
 			routes[selected_route].deleteNode(current);
 
-			//delete current;
+			delete current;
 
 			break;
 		}
