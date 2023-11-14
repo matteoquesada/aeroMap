@@ -15,7 +15,7 @@ int main() {
     RenderWindow window(VideoMode(1280, 720), "AeroMap v0.3 ALPHA");
     window.setFramerateLimit(144);
 
-    GUI gui(window);
+    GUI gui(window); // GUI OBJECT - BASE OF THE ENTIRE UI AND ITS HANDLING
 
     while (window.isOpen()) {
         Event event;
@@ -30,6 +30,7 @@ int main() {
             }
         }
 
+        // UPDATE CYCLE OF THE GUI
         window.clear();
         gui.draw(window);
         window.display();

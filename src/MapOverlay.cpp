@@ -19,6 +19,12 @@ void MapOverlay::create_route() {
 	selected_route = routes.size() - 1;
 }
 
+// DELETES A ROUTE
+void MapOverlay::delete_route() {
+	routes.erase(routes.begin() + selected_route);
+	selected_route = -1;
+}
+
 // DRAW ALL ROUTES
 void MapOverlay::draw(RenderWindow& window) {
 	for (int i = 0; i < routes.size(); i++) {

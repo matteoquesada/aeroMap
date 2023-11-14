@@ -9,8 +9,13 @@ GUI::GUI(RenderWindow& window) {
 	initialize_texture_and_sprite(map_texture, map_sprite, "assets/wallpaper/map.bmp", 0, 0, 1.0f, 1.0f); initialize_texture_and_sprite(orange_texture, orange_sprite, "assets/UI/orange.bmp", 900, 622, 1.0f, 1.0f);
 	initialize_texture_and_sprite(blue_texture, blue_sprite, "assets/UI/blue.bmp", 1110, 622, 1.0f, 1.0f); initialize_texture_and_sprite(red_texture, red_sprite, "assets/UI/red.bmp", 1180, 622, 1.0f, 1.0f);
 	initialize_texture_and_sprite(green_texture, green_sprite, "assets/UI/green.bmp", 1040, 622, 1.0f, 1.0f); initialize_texture_and_sprite(yellow_texture, yellow_sprite, "assets/UI/yellow.bmp", 970, 622, 1.0f, 1.0f);
+
 	initialize_texture_and_sprite(create_route_texture, create_route_sprite, "assets/UI/create_route.bmp", 15, 615, 0.35f, 0.35f); initialize_texture_and_sprite(delete_route_texture, delete_route_sprite, "assets/UI/delete_route.bmp", 15, 660, 0.35f, 0.35f);
 	initialize_texture_and_sprite(delete_mode_off_texture, delete_mode_off_sprite, "assets/UI/delete_mode_off.bmp", 685, 615, 0.35f, 0.35f); initialize_texture_and_sprite(delete_mode_on_texture, delete_mode_on_sprite, "assets/UI/delete_mode_on.bmp", 0, 0, 0.35f, 0.35f);
+
+	initialize_texture_and_sprite(save_texture, save_sprite, "assets/UI/save_routes.bmp", 350, 615, 0.35f, 0.35f); initialize_texture_and_sprite(load_texture, load_sprite, "assets/UI/load_routes.bmp", 350, 660, 0.35f, 0.35f);
+	initialize_texture_and_sprite(change_route_texture, change_route_sprite, "assets/UI/change_route.bmp", 685, 660, 0.35f, 0.35f);
+
 }
 
 // INITIALIZES A TEXTURE AND A SPRITE WITH THE GIVEN PARAMETERS
@@ -38,6 +43,9 @@ void GUI::draw(RenderWindow& window) {
 	// DOCK OF BUTTONS
 	window.draw(create_route_sprite);
 	window.draw(delete_route_sprite);
+	window.draw(change_route_sprite);
+	window.draw(save_sprite);
+	window.draw(load_sprite);
 	
 	// DELETE MODE BEHAVIOR
 	// MOVES OUT OF THE SCREEN WHEN NOT ACTIVE - MAKING IT INVISIBLE AND UNCLICKABLE
@@ -91,6 +99,7 @@ void GUI::handle_input(Event& event) {
 			}
 			else if (handle_mouse_click(event.mouseButton.x, event.mouseButton.y, delete_route_sprite)) {
 				cout << "DELETE ROUTE" << endl;
+				map_overlay.delete_route();
 			}
 			else if (handle_mouse_click(event.mouseButton.x, event.mouseButton.y, delete_mode_off_sprite)) {
 				cout << "DELETE MODE OFF" << endl;
@@ -99,6 +108,18 @@ void GUI::handle_input(Event& event) {
 			else if (handle_mouse_click(event.mouseButton.x, event.mouseButton.y, delete_mode_on_sprite)) {
 				cout << "DELETE MODE ON" << endl;
 				map_overlay.change_delete_mode();
+			}
+			else if (handle_mouse_click(event.mouseButton.x, event.mouseButton.y, save_sprite)) {
+				cout << "SAVE ROUTES" << endl;
+				//map_overlay.save_routes();
+			}
+			else if (handle_mouse_click(event.mouseButton.x, event.mouseButton.y, load_sprite)) {
+				cout << "LOAD ROUTES" << endl;
+				//map_overlay.load_routes();
+			}
+			else if (handle_mouse_click(event.mouseButton.x, event.mouseButton.y, change_route_sprite)) {
+				cout << "CHANGE ROUTE" << endl;
+				//map_overlay.change_selected_route();
 			}
 
 			else if (handle_mouse_click(event.mouseButton.x, event.mouseButton.y, map_sprite)) {

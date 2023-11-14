@@ -29,6 +29,11 @@ public:
 	Texture create_route_texture; Texture delete_route_texture; Texture delete_mode_off_texture; Texture delete_mode_on_texture;  Texture save_texture; Texture load_texture;
 	Sprite create_route_sprite; Sprite delete_route_sprite; Sprite delete_mode_off_sprite; Sprite delete_mode_on_sprite; Sprite save_sprite; Sprite load_sprite;
 
+	Texture change_route_texture; 
+	Sprite change_route_sprite;
+
+
+
 
 	GUI();
 

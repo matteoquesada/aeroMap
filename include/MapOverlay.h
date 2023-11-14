@@ -26,6 +26,9 @@ public:
 	// CREATES A NEW EMPTY ROUTE
 	void create_route();
 
+	// DELETES A ROUTE
+	void delete_route();
+
 	// CHANGE SELECTED ROUTE
 	void change_selected_route(int route_id);
 
