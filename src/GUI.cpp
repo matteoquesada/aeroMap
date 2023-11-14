@@ -111,11 +111,11 @@ void GUI::handle_input(Event& event) {
 			}
 			else if (handle_mouse_click(event.mouseButton.x, event.mouseButton.y, save_sprite)) {
 				cout << "SAVE ROUTES" << endl;
-				//map_overlay.save_routes();
+				map_overlay.save_routes();
 			}
 			else if (handle_mouse_click(event.mouseButton.x, event.mouseButton.y, load_sprite)) {
 				cout << "LOAD ROUTES" << endl;
-				//map_overlay.load_routes();
+				map_overlay.load_routes();
 			}
 			else if (handle_mouse_click(event.mouseButton.x, event.mouseButton.y, change_route_sprite)) {
 				cout << "CHANGE ROUTE" << endl;

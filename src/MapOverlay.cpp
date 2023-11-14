@@ -66,4 +66,47 @@ void MapOverlay::delete_node(int x, int y) {
 
 }
 
+// SAVES ALL ROUTES TO A FILE
+void MapOverlay::save_routes() {
+	ofstream file;
+	file.open("userdata/routes.txt");
+
+	for (int i = 0; i < routes.size(); i++) {
+		Node* current = routes[i].get_start_node();
+
+		while (current != nullptr) {
+			file << current->get_x() << " " << current->get_y() << endl;
+			current = current->get_next();
+		}
+
+		file << endl;
+	}
+
+	file.close();
+}
+
+// LOADS ALL ROUTES FROM A FILE
+void MapOverlay::load_routes() {
+	ifstream file;
+	file.open("userdata/routes.txt");
+
+	if (file.is_open()) {
+		string line;
+
+		while (getline(file, line)) {
+			if (line == "") {
+				create_route();
+			}
+			else {
+				int x = stoi(line.substr(0, line.find(" ")));
+				int y = stoi(line.substr(line.find(" ") + 1, line.length()));
+
+				add_node(x, y);
+			}
+		}
+	}
+
+	file.close();
+}
+
 

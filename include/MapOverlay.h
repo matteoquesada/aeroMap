@@ -3,6 +3,11 @@
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
+#include <iostream>
+using namespace std;
+
+#include <fstream>
+
 #include "Route.h"
 
 class MapOverlay {
@@ -43,6 +48,12 @@ public:
 
 	// CHANGE ROUTE COLOR
 	void change_route_color(Color color);
+
+	// SAVE ROUTES TO FILE
+	void save_routes();
+
+	// LOAD ROUTES FROM FILE
+	void load_routes();
 
 
 

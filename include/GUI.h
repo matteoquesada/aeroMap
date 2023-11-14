@@ -32,9 +32,6 @@ public:
 	Texture change_route_texture; 
 	Sprite change_route_sprite;
 
-
-
-
 	GUI();
 
 	GUI(RenderWindow& window);
