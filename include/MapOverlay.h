@@ -10,11 +10,15 @@ using namespace std;
 
 #include "Route.h"
 
+#include "Vector.h"
+
 class MapOverlay {
 
 private:
 
-	std::vector<Route> routes;
+	//std::vector<Route> routes;
+
+	SimpleVector<Route> routes;
 	
 public:
 

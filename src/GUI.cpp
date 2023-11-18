@@ -119,7 +119,7 @@ void GUI::handle_input(Event& event) {
 			}
 			else if (handle_mouse_click(event.mouseButton.x, event.mouseButton.y, change_route_sprite)) {
 				cout << "CHANGE ROUTE" << endl;
-				//map_overlay.change_selected_route();
+				map_overlay.change_selected_route(5);
 			}
 
 			else if (handle_mouse_click(event.mouseButton.x, event.mouseButton.y, map_sprite)) {

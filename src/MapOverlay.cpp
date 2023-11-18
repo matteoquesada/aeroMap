@@ -16,12 +16,12 @@ void MapOverlay::add_node(int x, int y) {
 // CREATES A NEW EMPTY ROUTE
 void MapOverlay::create_route() {
 	routes.push_back(Route());
-	selected_route = routes.size() - 1;
+	selected_route = routes.size() -1;
 }
 
 // DELETES A ROUTE
 void MapOverlay::delete_route() {
-	routes.erase(routes.begin() + selected_route);
+	routes.erase(selected_route);
 	selected_route = -1;
 }
 
@@ -39,7 +39,13 @@ void MapOverlay::change_route_color(Color color) {
 
 // CHANGE SELECTED ROUTE
 void MapOverlay::change_selected_route(int route_id) {
-	selected_route = route_id;
+	if (selected_route+1 < routes.size()) {
+		selected_route++;
+	}
+	else {
+		selected_route = 0;
+	}
+		
 }
 
 // CHANGE DELETE MODE

@@ -137,12 +137,14 @@
     <ClCompile Include="src\MapOverlay.cpp" />
     <ClCompile Include="src\Node.cpp" />
     <ClCompile Include="src\Route.cpp" />
+    <ClCompile Include="src\Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\GUI.h" />
     <ClInclude Include="include\MapOverlay.h" />
     <ClInclude Include="include\Node.h" />
     <ClInclude Include="include\Route.h" />
+    <ClInclude Include="include\Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
