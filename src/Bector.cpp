@@ -51,7 +51,7 @@ void Bector<T>::resize() {
     T* newData = new T[newCapacity];
 
     for (size_t i = 0; i < current_size; ++i) {
-        newData[i] = data[i]; .// PENDING TO CHECK IF IN SOME RARE CASES IT DOESN'T WORK BY BUFFER OVERFLOW (ALTOUGH IT SHOULD)
+        newData[i] = data[i]; // PENDING TO CHECK IF IN SOME RARE CASES IT DOESN'T WORK BY BUFFER OVERFLOW (ALTOUGH IT SHOULD)
     }
 
     delete[] data;
