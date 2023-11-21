@@ -30,7 +30,7 @@
     <ClCompile Include="src\MapOverlay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Vector.cpp">
+    <ClCompile Include="src\Bector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,7 +47,7 @@
     <ClInclude Include="include\MapOverlay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Vector.h">
+    <ClInclude Include="include\Bector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

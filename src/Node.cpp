@@ -1,6 +1,7 @@
 #include "../include/Node.h"
 
-// CONSTRUCTOR
+// CONSTRUCTORS
+Node::Node() : x(0), y(0), next(nullptr), prev(nullptr) {}
 Node::Node(int x, int y) : x(x), y(y), next(nullptr), prev(nullptr) {}
 
 // GETTERS AND SETTERS

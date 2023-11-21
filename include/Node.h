@@ -11,12 +11,19 @@ private:
 
 public:
 
+    // CONSTRUCTORS
+    Node();
     Node(int x, int y);
-    int get_x(); int get_y();
+
+    // GETTERS
+    int get_x(); 
+    int get_y();
     
+    // MORE GETTERS
     Node* get_next();
     Node* get_prev();
 
+    // SETTERS
     void set_next(Node* next_node);
     void set_prev(Node* prev_node);
 };

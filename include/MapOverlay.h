@@ -10,16 +10,14 @@ using namespace std;
 
 #include "Route.h"
 
-#include "Vector.h"
+#include "Bector.h"
 
 class MapOverlay {
 
 private:
 
-	//std::vector<Route> routes;
+	Bector<Route> routes;
 
-	SimpleVector<Route> routes;
-	
 public:
 
 	int selected_route;
@@ -59,14 +57,20 @@ public:
 	// LOAD ROUTES FROM FILE
 	void load_routes();
 
+	// SHOW/HIDE ROUTE ON THE MAP
+	void show_hide_route();
+
+	// DESTRUCTOR
+	~MapOverlay();
 
 
 
-	
 
 
 
 
 
-	
+
+
+
 };

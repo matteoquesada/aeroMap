@@ -8,8 +8,6 @@ using namespace std;
 
 #include "MapOverlay.h"
 
-
-
 class GUI {
 
 public:
@@ -28,22 +26,28 @@ public:
 	// DOCK BUTTONS
 	Texture create_route_texture; Texture delete_route_texture; Texture delete_mode_off_texture; Texture delete_mode_on_texture;  Texture save_texture; Texture load_texture;
 	Sprite create_route_sprite; Sprite delete_route_sprite; Sprite delete_mode_off_sprite; Sprite delete_mode_on_sprite; Sprite save_sprite; Sprite load_sprite;
+	Texture change_route_texture; Sprite change_route_sprite; Texture show_hide_texture; Sprite show_hide_sprite;
 
-	Texture change_route_texture; 
-	Sprite change_route_sprite;
-
+	// CONSTRUCTORS
 	GUI();
-
 	GUI(RenderWindow& window);
 
+	// INITIALIZES A TEXTURE AND A SPRITE WITH THE GIVEN PARAMETERS
 	void initialize_texture_and_sprite(Texture& texture, Sprite& sprite, string dir, int x, int y, float x_scale, float y_scale);
-	
+
+	// DRAWS THE GUI
 	void draw(RenderWindow& window);
 
+	// HANDLES THE USER INPUT
 	void handle_input(Event& event);
 
-	bool handle_mouse_click(int x, int y, const Sprite& button);
+	// HANDLES THE MOUSE CLICK
+	bool handle_mouse_click(int x, int y, Sprite& button);
 
-	bool is_inside_button(int x, int y, const Sprite& button);
+	// CHECKS IF THE MOUSE IS INSIDE A BUTTON
+	bool is_inside_button(int x, int y, Sprite& button);
+
+	// DESTRUCTOR
+	~GUI();
 
 };

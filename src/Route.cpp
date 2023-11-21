@@ -1,36 +1,36 @@
 #include "../include/Route.h"
 
 // CONSTRUCTORS
-Route::Route() : head(nullptr), tail(nullptr), color(Color::White) {
+Route::Route() : head(nullptr), tail(nullptr), color(Color::White), is_drawable(true) {
 }
 
-Route::Route(Node* head, Node* tail) : head(head), tail(tail), color(Color::White) {
+Route::Route(Node* head, Node* tail) : head(head), tail(tail), color(Color::White), is_drawable(true) {
 }
 
 // GETTERS AND SETTERS
 void Route::set_start_node(Node* head) {
-    this->head = head;
+	this->head = head;
 }
 
 Node* Route::get_start_node() {
-    return head;
+	return head;
 }
 
 void Route::set_end_node(Node* tail) {
-    this->tail = tail;
+	this->tail = tail;
 }
 
 Node* Route::get_end_node() {
-    return tail;
+	return tail;
 }
 
 // ADDS A NODE TO THE END OF THE ROUTE
 void Route::add_node(Node* node) {
-    if (head == nullptr) {
+	if (head == nullptr) {
 		head = node;
 		tail = node;
-    }
-    else {
+	}
+	else {
 		tail->set_next(node);
 		node->set_prev(tail);
 		tail = node;
@@ -56,17 +56,19 @@ void Route::delete_node(Node* node) {
 // DRAWS THE ENTIRE ROUTE WITH NODES AND LINES WITHIN THE WINDOW
 void Route::draw(RenderWindow& window) {
 
+	if (!is_drawable) return;
+
 	Node* current = head;
 	while (current != nullptr) {
 
 		// DRAWING THE NODE ITSELF WITH A BLACK BORDER
 		CircleShape circle(5);
 		circle.setFillColor(color);
-		circle.setPosition(current->get_x() -3, current->get_y()-3);
+		circle.setPosition(current->get_x() - 3, current->get_y() - 3);
 
 		CircleShape border(6);
 		border.setFillColor(Color::Black);
-		border.setPosition(current->get_x()-3, current->get_y()-3);
+		border.setPosition(current->get_x() - 3, current->get_y() - 3);
 
 		// DRAWING THE LINE BETWEEN NODES
 		if (current->get_next() != nullptr) {
@@ -83,6 +85,23 @@ void Route::draw(RenderWindow& window) {
 	}
 }
 
+
+// CHANGES THE COLOR OF THE ROUTE
 void Route::change_color(Color color) {
 	this->color = color;
 }
+
+// CHANGES THE VISIBILITY OF THE ROUTE
+void Route::show_hide() {
+	is_drawable = !is_drawable;
+}
+
+// DESTRUCTOR
+Route::~Route() {
+}
+
+// GET COLOR 
+Color Route::get_color() {
+	return color;
+}
+
